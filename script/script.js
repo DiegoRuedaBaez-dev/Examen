@@ -65,5 +65,41 @@ document.getElementById("dnaForm").addEventListener("submit", function(event) {
     const dnaCode = document.getElementById("dnaCode").value;
     const citizenAddress = document.getElementById("citizenAddress").value;
     const citizenPhone = document.getElementById("citizenPhone").value;
-    registerDNA(citizenName,citizenAddress,citizenPhone, dnaCode);
+    registerDNA(citizenName,dnaCode,citizenAddress,citizenPhone);
+});
+
+function hideAllSections() {
+  var containerElements = document.getElementsByClassName('container');
+
+  for (var i = 0; i < containerElements.length; i++) {
+      var sections = containerElements[i].children;
+
+      for (var j = 0; j < sections.length; j++) {
+          sections[j].style.display = 'none';
+      }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  hideAllSections();
+});
+
+
+function showSection(sectionId) {
+  hideAllSections();
+  var section = document.getElementById(sectionId);
+  if (section) {
+      section.style.display = 'block';
+}
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  for (var i = 0; i < navLinks.length; i++) {
+      navLinks[i].addEventListener('click', function (event) {
+          event.preventDefault();
+          var sectionId = this.getAttribute('href').substring(1); 
+          showSection(sectionId);
+      });
+  }
 });

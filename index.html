@@ -4,11 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reconocimiento de ADN - Policía Local de Villa Chica</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="./styles/styles.css">
 </head>
-<body>
-  <h1>Reconocimiento de ADN - Policía Local de Villa Chica</h1>
-  <div id="container">
+<body onload="hideAllSections()">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Policía Local de Villa Chica</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#dnaForm">Registrar Muestra</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#searchForm">Buscar Coincidencias</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="container" class="container mt-5">
     <h2>Registrar Nueva Muestra de ADN</h2>
     <form id="dnaForm">
       <label for="citizenName">Nombre del Ciudadano:</label>
@@ -19,15 +36,19 @@
       <input type="text" id="citizenAddress" required><br>
       <label for="citizenPhone">Celular del Ciudadano:</label>
       <input type="text" id="citizenPhone" required><br>
-      <button type="submit">Registrar Muestra</button>
+      <button type="submit" class="btn btn-primary">Registrar Muestra</button>
     </form>
-
-    <h2>Buscar Coincidencias de ADN</h2>
-    <label for="searchCode">Ingrese Código de ADN:</label>
-    <input type="text" id="searchCode" pattern="[01]{20}" required>
-    <button type="search" onclick="searchDNA()">Buscar</button>
-    <ul id="results"></ul>
+    <div id="searchForm">
+      <h2>Buscar Coincidencias de ADN</h2>
+      <label for="searchCode">Ingrese Código de ADN:</label>
+      <input type="text" id="searchCode" pattern="[01]{20}" required>
+      <button type="search" onclick="searchDNA()" class="btn btn-primary">Buscar</button>
+      <ul id="results"></ul>
+    </div>
   </div>
   <script src="./script/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
