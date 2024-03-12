@@ -1,0 +1,12 @@
+{
+  "name": "test.io-main",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "server": "json-server --watch ./db/bd_ciudadnos.json --port 3001"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reconocimiento de ADN - Policía Local de Villa Chica</title>
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+  <h1>Reconocimiento de ADN - Policía Local de Villa Chica</h1>
+  <div id="container">
+    <h2>Registrar Nueva Muestra de ADN</h2>
+    <form id="dnaForm">
+      <label for="citizenName">Nombre del Ciudadano:</label>
+      <input type="text" id="citizenName" required><br>
+      <label for="dnaCode">Código de ADN (20 dígitos binarios):</label>
+      <input type="text" id="dnaCode" pattern="[01]{20}" required><br>
+      <label for="citizenAddress">Dirección del Ciudadano:</label>
+      <input type="text" id="citizenAddress" required><br>
+      <label for="citizenPhone">Celular del Ciudadano:</label>
+      <input type="text" id="citizenPhone" required><br>
+      <button type="submit">Registrar Muestra</button>
+    </form>
+
+    <h2>Buscar Coincidencias de ADN</h2>
+    <label for="searchCode">Ingrese Código de ADN:</label>
+    <input type="text" id="searchCode" pattern="[01]{20}" required>
+    <button type="search" onclick="searchDNA()">Buscar</button>
+    <ul id="results"></ul>
+  </div>
+  <script src="./script/script.js"></script>
+</body>
+</html>
